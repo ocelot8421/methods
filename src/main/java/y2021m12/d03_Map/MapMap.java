@@ -1,6 +1,8 @@
 package y2021m12.d03_Map;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MapMap {
@@ -85,7 +87,7 @@ public class MapMap {
         myMap.remove("First key");
         System.out.println(myMap);
 
-        //10,Töröljünk ki egy elemet, ha értéke egy bizonyos value --
+        //10,Töröljünk ki egy elemet, ha értéke egy bizonyos value -- 00:32:34
         System.out.println("-------------------------");
         System.out.println("//10, \n  Törlés értékpárt beadva");
         myMap.remove("Second key", 6);
@@ -93,11 +95,35 @@ public class MapMap {
         myMap.remove("Second key", 2); // csak akkor töröl, ha az értékpár mindkét tagja stimmel
         System.out.println(myMap);
 
-        //11, Töröljük ki a map tartalmát --
+        //11, Töröljük ki a map tartalmát -- 00:33:45
         // hashMap.clear();
         // System.out.println(hashMap);
          System.out.println("-------------------------");
-        System.out.println("//11, \n  Map törlése (lásd a kikommentelt kódot)");
+        System.out.println("//11, \n  Map kiürítése clear-rel (lásd a kikommentelt kódot)");
+
+        //12, Lista egy mapben? -- 00:39:37
+        System.out.println("-------------------------");
+        System.out.println("//12, \n  list-et beadni értékként");
+        List<String> strList = new ArrayList<>();
+        strList.add("First key");
+        strList.add("Second key");
+        strList.add("Third key");
+        strList.add("Fifth key");
+        List<String> strList1 = new ArrayList<>();
+        strList1.add("First key");
+        strList1.add("Second key");
+        strList1.add("Third key");
+        strList1.add("Fifth key");
+        Map<Integer, List<String>> newHashmap = new HashMap<>();
+        newHashmap.put(1, strList);
+        newHashmap.put(2, strList1);
+        System.out.println(newHashmap);
+        for (Map.Entry<Integer, List<String>> integerListEntry : newHashmap.entrySet()) {
+            System.out.println("Key: " + integerListEntry.getKey());
+            for (String s : integerListEntry.getValue()) {
+                System.out.println(s);
+            }
+        }
 
 
     }
