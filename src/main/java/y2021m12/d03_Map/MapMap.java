@@ -125,6 +125,26 @@ public class MapMap {
             }
         }
 
+        //13, Equals?
+        System.out.println("-------------------------");
+        System.out.println("Original: " + myMap);
+        Map<String, Integer > checkMap = new HashMap<>();
+        checkMap.put("Fifth key", 5);
+        checkMap.put("Third key", 3);
+        System.out.println("Equals? " + myMap.equals(checkMap));
 
+        System.out.println("-----------Sandwiches");
+        Map<Integer, Sandwich> sMap = new HashMap<>();
+        sMap.put(1, new Sandwich("Ham"));
+        sMap.put(2, new Sandwich("Chicken"));
+        sMap.put(3, new Sandwich("Beef"));
+        sMap.put(4, new Sandwich("Ham"));
+
+        Map<Integer, Sandwich> sMap1 = new HashMap<>();
+        sMap1.put(1, new Sandwich("Ham"));
+        sMap1.put(2, new Sandwich("Chicken"));
+        sMap1.put(3, new Sandwich("Beef"));
+        sMap1.put(4, new Sandwich("Ham"));
+        System.out.println(sMap.equals(sMap1));
     }
 }
