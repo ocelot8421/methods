@@ -48,7 +48,7 @@ public class MapMap {
 
         //5, Iteráljunk végig rajta és irassuk ki a kulcs-érték párokat. -- ...+ 00:20:20
         System.out.println("-------------------------");
-        System.out.println("//5, ");
+        System.out.println("//5, \n  értékpárok kiírása (entrySet)");
         // myMap.entrySet().iter
         for (Map.Entry<String, Integer> entry : myMap.entrySet()) {
             System.out.println("entrySet: " + entry);
@@ -56,7 +56,7 @@ public class MapMap {
 
         //6, Iteráljunk végig rajta és írjuk ki  csak a kulcsokat -- 00:21:14
         System.out.println("-------------------------");
-        System.out.println("//6, ");
+        System.out.println("//6, \n  kulcsok kiírása");
         System.out.println(myMap.keySet());
         for (String s : myMap.keySet()) {
             System.out.println("Keys: " + s);
@@ -64,7 +64,7 @@ public class MapMap {
 
         //7, Iteráljunk végig rajta és írjuk ki  csak a valuekat -- 00:22:24
         System.out.println("-------------------------");
-        System.out.println("//7, ");
+        System.out.println("//7, \n  értékek kiírása");
         System.out.println(myMap.values());
         for (Integer value : myMap.values()) {
             System.out.println("Value: " + value);
@@ -72,7 +72,7 @@ public class MapMap {
 
         //8, Adjunk hozzá egy elemet, ha még nem szerepel benne. -- 00:26:58
         System.out.println("-------------------------");
-        System.out.println("//8, ");
+        System.out.println("//8, \n  put átírja, putIfAbsent nem a First key-nél");
         System.out.println("Our hasMap: " + myMap);
         myMap.putIfAbsent("First key", 6); // put átírja, putIfAbsent nem
         System.out.println("Our hasMap: " + myMap);
@@ -81,11 +81,23 @@ public class MapMap {
 
         //9, Töröljünk ki egy elemet -- 00:29:25
         System.out.println("-------------------------");
-        System.out.print("//9, ");
+        System.out.println("//9, \n  Törlés csak key-t beadva");
         myMap.remove("First key");
         System.out.println(myMap);
 
+        //10,Töröljünk ki egy elemet, ha értéke egy bizonyos value --
+        System.out.println("-------------------------");
+        System.out.println("//10, \n  Törlés értékpárt beadva");
+        myMap.remove("Second key", 6);
+        System.out.println(myMap);
+        myMap.remove("Second key", 2); // csak akkor töröl, ha az értékpár mindkét tagja stimmel
+        System.out.println(myMap);
 
+        //11, Töröljük ki a map tartalmát --
+        // hashMap.clear();
+        // System.out.println(hashMap);
+         System.out.println("-------------------------");
+        System.out.println("//11, \n  Map törlése (lásd a kikommentelt kódot)");
 
 
     }
